@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageFrontend.master.cs" Inherits="MasterPageFrontend" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- FONTAWESOME -->
+    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
+    <!-- Optional theme -->
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" rel="stylesheet">
+    <!-- Latest compiled and minified JavaScript -->
+    <script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="StyleSheetFrontend.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="col-lg-12">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <header class="col-lg-12">
+                    <img src="Images/LayoutImages/dj_grunk_logo.png" />
+                </header>
+
+                <nav class="col-lg-12">
+                    <ul>
+                        <li><a href="Default.aspx">Forside</a></li>
+                        <li><a href="MusicShop.aspx">Musikbutikken</a></li>
+                        <li><a href="Reviews.aspx">Anmeldelser</a></li>
+                        <li><a href="UserProfile.aspx">Min Profil</a></li>
+                        <li><a href="Contact.aspx">Kontakt</a></li>
+                        <li class="form-inline" id="login_field_masterpage">
+                            <div class="form-group">
+                                <asp:TextBox ID="TextBox_email" runat="server" placeholder="Email" CssClass="form-control login_textbokse"></asp:TextBox>
+                            </div>
+
+                            <div class="form-group">
+                                <asp:TextBox ID="TextBox_password" runat="server" Placeholder="Kodeord" TextMode="Password" CssClass="form-control login_textbokse"></asp:TextBox>
+                                <asp:Label ID="Label_ErrorMessage" runat="server" Text=""></asp:Label>
+                                <asp:Button ID="Button_login" runat="server" Text="Login" OnClick="Button_login_Click" ValidationGroup="login" class="btn btn-default" />
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <meta http-equiv="Refresh" content="6" />
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="col-lg-2"></div>
+            <footer class="col-lg-8">
+                <asp:Repeater ID="Repeater_KontaktInfo" runat="server" DataSourceID="SqlDataSourceKontaktInfo">
+                    <ItemTemplate>
+                        <div class="col-lg-12">
+                            <div class="col-lg-4">
+                                <h4>Addresse</h4>
+                                <p><%#Eval ("Contact_location_name") %></p>
+                                <p><%#Eval ("Contact_address") %></p>
+                                <p><%#Eval ("Contact_postal_number") %></p>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <h4>Åbningstider</h4>
+                                <p><%#Eval ("Contact_opening_monday_friday") %></p>
+                                <p><%#Eval ("Contact_opening_saturday") %></p>
+                                <p><%#Eval ("Contact_opening_sunday") %></p>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <h4>Kontakt Oplysninger:</h4>
+                                <p><%#Eval ("Contact_phone") %></p>
+                                <p><%#Eval ("Contact_email") %></p>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:SqlDataSource ID="SqlDataSourceKontaktInfo" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT * FROM [Contact]"></asp:SqlDataSource>
+            </footer>
+            <div class="col-lg-2"></div>
+        </div>
+    </form>
+</body>
+</html>

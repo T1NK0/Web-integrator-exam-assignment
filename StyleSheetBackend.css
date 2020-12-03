@@ -1,0 +1,112 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#admin_nav {
+    margin: 0;
+    padding: 0;
+    padding-right: 0.5%;
+    height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #263238;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-left: 1%;
+    margin-top: 5%;
+}
+
+    li a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #45565C;
+        color: white;
+    }
+
+#header_item_film {
+    height: 100px;
+    background-color: #f44336;
+}
+
+#header_item_genrer {
+    height: 100px;
+    background-color: #009688;
+}
+
+#header_item_brugere {
+    height: 100px;
+    background-color: #4CAF50;
+}
+
+.overskrift_overview {
+    color: #ffffff;
+    margin-top: 30px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#overskrift {
+    margin-left: 1%;
+}
+
+.Button_Logud {
+    float: right;
+    margin-right: 1%;
+    margin-top: 1%;
+}
+
+.film_antal {
+    display: inline-block;
+}
+
+.genre_antal {
+    display: inline-block;
+}
+
+.brugere_antal {
+    display: inline-block;
+}
+
+.antal_style {
+    color: #fff;
+    float: right;
+    margin-top: 8%;
+    font-size: x-large;
+    margin-right: 5%;
+}
+
+
+.box-shadow-overview {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#opret_kasse {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    padding-bottom: 15px;
+}
+
+#bruger_ret {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.table {
+    margin-bottom: 0px;
+}

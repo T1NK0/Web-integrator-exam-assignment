@@ -1,0 +1,88 @@
+﻿body {
+    color: #FFF6DA;
+    font-family: 'Oswald', sans-serif;
+}
+
+.main {
+    background-color: #2D466E;
+}
+
+.col-lg-12 {
+    padding: 0px;
+}
+
+.col-lg-8 {
+    padding: 0px;
+}
+
+a {
+    color: #FFF6DA;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #FFF6DA;
+        text-decoration: none;
+    }
+
+/*
+//////////////////////
+//      HEADER      //
+//////////////////////
+*/
+
+header {
+    background-color: #333333;
+}
+
+footer {
+    background-color: #B9202A;
+}
+
+/*
+///////////////////
+//      NAV      //
+///////////////////
+*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #B9202A;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        li a:hover {
+            background-color: #FFF6DA;
+            text-decoration: none;
+            color: #000;
+        }
+
+#login_field_masterpage {
+    float: right;
+    padding-top: 5px;
+    padding-right: 14px;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+/*
+//////////////////////
+//      FOOTER      //
+//////////////////////
+*/
